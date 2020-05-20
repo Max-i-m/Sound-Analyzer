@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sound Analyzer</title>
+    <script src="js/analyzer.js"></script>
+
+    <style>
+        html{
+            background-color: black;
+            overflow: hidden;
+        }
+
+        #toolBar{
+            position: fixed;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="toolBar">
+        <select id="sources">
+            <optgroup label="Songs">
+                <option value="summerTime.mp3">Summer Time</option>
+                <option value="lastSummer.mp3">Last Summer</option>
+                <option value="xenoGenesis.mp3">Xeno-Genesis</option>
+            </optgroup>
+            <optgroup label="Oscilators">
+                <option value="sine">Sine</option>
+                <option value="square">Square</option>
+                <option value="triangle">Triangle</option>
+                <option value="sawtooth">Sawtooth</option>
+            </optgroup>
+            <option value="mic">Microphone</option>
+        </select>
+
+        <select id="types">
+            <option value="bar">Bar</option>
+            <option value="circle">Circle</option>
+        </select>
+        
+        <audio src="summerTime.mp3" id="audio" controls="controls"></audio>
+        <input id="frequency" type="number" min="20" max="20000" maxlength="5" value="375" step="10" class="hidden"/>
+    </div>
+    <canvas id="canvas"></canvas>
+</body>
+</html>
